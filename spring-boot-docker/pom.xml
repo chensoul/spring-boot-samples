@@ -152,7 +152,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.5.0</version>
                 <configuration>
                     <executable>${container.executable}</executable>
                     <workingDirectory>${docker.image.dockerfile.dir}</workingDirectory>
