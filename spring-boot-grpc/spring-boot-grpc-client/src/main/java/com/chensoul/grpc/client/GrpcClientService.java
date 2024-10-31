@@ -1,6 +1,9 @@
 package com.chensoul.grpc.client;
 
 
+import com.chensoul.grpc.demo.HelloRequest;
+import com.chensoul.grpc.demo.HelloResponse;
+import com.chensoul.grpc.demo.HelloServiceGrpc;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Service;
 
@@ -8,10 +11,10 @@ import org.springframework.stereotype.Service;
 public class GrpcClientService {
 
     @GrpcClient("local-grpc-server")
-    private com.chensoul.grpc.demo.HelloServiceGrpc.HelloServiceBlockingStub helloServiceStub;
+    private HelloServiceGrpc.HelloServiceBlockingStub helloServiceStub;
 
-    public com.chensoul.grpc.demo.HelloResponse receiveGreeting(String name) {
-        com.chensoul.grpc.demo.HelloRequest request = com.chensoul.grpc.demo.HelloRequest.newBuilder()
+    public HelloResponse receiveGreeting(String name) {
+        HelloRequest request = HelloRequest.newBuilder()
                 .setName(name)
                 .build();
         return helloServiceStub.sayHello(request);

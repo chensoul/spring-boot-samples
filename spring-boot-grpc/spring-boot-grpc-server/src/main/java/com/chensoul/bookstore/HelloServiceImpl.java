@@ -1,5 +1,7 @@
 package com.chensoul.bookstore;
 
+import com.chensoul.grpc.demo.HelloRequest;
+import com.chensoul.grpc.demo.HelloResponse;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 
@@ -7,8 +9,8 @@ import net.devh.boot.grpc.server.service.GrpcService;
 public class HelloServiceImpl extends com.chensoul.grpc.demo.HelloServiceGrpc.HelloServiceImplBase {
 
     @Override
-    public void sayHello(com.chensoul.grpc.demo.HelloRequest request, StreamObserver<com.chensoul.grpc.demo.HelloResponse> responseObserver) {
-        com.chensoul.grpc.demo.HelloResponse reply = com.chensoul.grpc.demo.HelloResponse.newBuilder()
+    public void sayHello(HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
+        HelloResponse reply = HelloResponse.newBuilder()
                 .setMessage("Hello ==> " + request.getName())
                 .build();
         responseObserver.onNext(reply);
