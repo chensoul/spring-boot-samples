@@ -1,4 +1,4 @@
-package com.chensoul.grpc.server;
+package com.chensoul.bookstore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

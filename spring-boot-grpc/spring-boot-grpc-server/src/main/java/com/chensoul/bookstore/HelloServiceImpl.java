@@ -1,4 +1,4 @@
-package com.chensoul.grpc.server;
+package com.chensoul.bookstore;
 
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;

@@ -10,5 +10,6 @@
         <module>spring-boot-docker</module>
         <module>spring-boot-docker-compose</module>
         <module>spring-boot-grpc</module>
+        <module>spring-boot-modulith</module>
     </modules>
 </project>
