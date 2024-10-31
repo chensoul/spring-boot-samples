@@ -22,8 +22,8 @@ public class ArchUnitCachedTest {
     }
 
     public void thisMethodCallsTheWrongBigDecimalConstructor() {
-        BigDecimal value = new BigDecimal(123.0);
-        // BigDecimal value = new BigDecimal("123.0"); // works!
+//        BigDecimal value = new BigDecimal(123.0);
+        BigDecimal value = new BigDecimal("123.0"); // works!
     }
 
     @Deprecated
