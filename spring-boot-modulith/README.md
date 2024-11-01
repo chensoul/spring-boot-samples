@@ -1,12 +1,29 @@
-# spring-boot-architecture
+# spring-boot-modulith
 
-* [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-* [Onion Architecture](https://jeffreypalermo.wpcomstaging.com/2008/07/the-onion-architecture-part-1/)
-* [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)
-* [Ports & Adapters Architecture](http://wiki.c2.com/?PortsAndAdaptersArchitecture)
-* [Tomato Architecture](https://www.sivalabs.in/tomato-architecture-pragmatic-approach-to-software-design/)
 
-架构设计关键原则
+架构发展过程：
+- MVC
+- DDD
+- 六边形架构
+- 洋葱架构 https://github.com/hirannor/springboot-hexagonal-ddd
+  - 围绕独立的对象模型构建应用 
+  - 基础设施 -> 应用服务 -> 领域服务 -> 领域模型。外层依赖内层，内层对外层无感知。
+  - 内层定义接口，外层实现接口。基础设施实现接口，通过依赖注入的方式注入到其他层。
+  - 所有的应用代码可以独立于基础设施编译和运行
+- 微服务
+- 整洁架构 https://medium.com/@viniciusromualdobusiness/clean-architecture-with-spring-boot-a-good-idea-d6f97e450130
+  - 接口适配层 -> 用例层 -> 实体层
+ 
+
+分层：
+- 应用层：controller、cli、job
+- 服务层：service
+- 领域层：domain
+- 持久层：persistence
+- 基础设施：infrastructure
+
+- 
+- 架构设计关键原则
 
 - 思考什么最适合您的软件，而不是盲目听从大众的建议。
 - 努力使事情保持简单，而不是通过猜测未来十年的需求来过度设计解决方案。
@@ -27,3 +44,4 @@
 ## References
 
 - https://stibel.icu/md/method/arch-principle/arch-principle-arch-develop.html
+- https://github.com/hirannor/springboot-hexagonal-ddd

@@ -1,0 +1,12 @@
+### List orders
+GET http://localhost:8080/api/orders
+Accept: application/json
+
+### Create order
+
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "name": "John Doe"
+}

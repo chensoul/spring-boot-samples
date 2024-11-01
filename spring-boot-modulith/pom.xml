@@ -18,6 +18,7 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>monolith-clean</module>
+        <module>monolith-simple</module>
+        <module>monolith-onion</module>
     </modules>
 </project>

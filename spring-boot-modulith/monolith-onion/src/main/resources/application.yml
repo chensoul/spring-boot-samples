@@ -1,0 +1,35 @@
+spring.application.name: spring-boot-modulith
+
+spring.mvc.problemdetails.enabled: true
+spring.main.allow-bean-definition-overriding: true
+
+app.order-queue: order-queue
+app.publish-order-events-job-cron: "*/5 * * * * *"
+app.new-order-job-cron: "*/10 * * * * *"
+
+spring.datasource.url: jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username: postgres
+spring.datasource.password: postgres
+spring.jpa.open-in-view: false
+spring.jpa.show-sql: true
+spring.jpa.generate-ddl: true
+spring.jpa.hibernate.ddl-auto: create
+spring.jpa.database: postgresql
+
+spring.mail.host: 127.0.0.1
+spring.mail.port: 1025
+spring.mail.username: PLACEHOLDER
+spring.mail.password: PLACEHOLDER
+spring.mail.properties.mail.smtp.auth: true
+spring.mail.properties.mail.smtp.starttls.enable: true
+
+spring.data.mongodb.host: localhost
+spring.data.mongodb.port: 27017
+spring.data.mongodb.database: mongodb
+spring.data.mongodb.username: user
+spring.data.mongodb.password: pass
+spring.data.mongodb.authentication-database: admin
+
+management.endpoints.web.exposure.include: "*"
+management.tracing.sampling.probability: 1.0
+management.tracing.enabled: false
