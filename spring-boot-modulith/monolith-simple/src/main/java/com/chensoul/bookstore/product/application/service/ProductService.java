@@ -1,4 +1,4 @@
-package com.chensoul.bookstore.product.service;
+package com.chensoul.bookstore.product.application.service;
 
 import com.chensoul.bookstore.common.model.PagedResult;
 import com.chensoul.bookstore.product.Product;

@@ -2,8 +2,8 @@ package com.chensoul.bookstore.product.web.controller;
 
 import com.chensoul.bookstore.common.model.PagedResult;
 import com.chensoul.bookstore.product.Product;
-import com.chensoul.bookstore.product.service.ProductNotFoundException;
-import com.chensoul.bookstore.product.service.ProductService;
+import com.chensoul.bookstore.product.application.ProductNotFoundException;
+import com.chensoul.bookstore.product.application.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

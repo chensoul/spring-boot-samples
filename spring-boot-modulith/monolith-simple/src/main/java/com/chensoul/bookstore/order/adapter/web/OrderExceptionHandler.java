@@ -1,7 +1,7 @@
-package com.chensoul.bookstore.order.web.config;
+package com.chensoul.bookstore.order.adapter.web;
 
-import com.chensoul.bookstore.order.service.InvalidOrderException;
-import com.chensoul.bookstore.order.service.OrderNotFoundException;
+import com.chensoul.bookstore.order.application.InvalidOrderException;
+import com.chensoul.bookstore.order.application.OrderNotFoundException;
 import java.net.URI;
 import java.time.Instant;
 import org.springframework.http.HttpStatus;

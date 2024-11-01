@@ -1,4 +1,4 @@
-package com.chensoul.bookstore.product.service;
+package com.chensoul.bookstore.product.application.service;
 
 import com.chensoul.bookstore.product.Product;
 import com.chensoul.bookstore.product.domain.ProductEntity;

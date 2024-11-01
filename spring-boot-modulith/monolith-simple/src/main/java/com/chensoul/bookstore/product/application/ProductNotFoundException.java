@@ -1,4 +1,4 @@
-package com.chensoul.bookstore.product.service;
+package com.chensoul.bookstore.product.application;
 
 public class ProductNotFoundException extends RuntimeException {
     public ProductNotFoundException(String message) {

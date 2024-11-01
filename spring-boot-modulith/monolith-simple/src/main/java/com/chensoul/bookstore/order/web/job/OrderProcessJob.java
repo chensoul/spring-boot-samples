@@ -1,6 +1,6 @@
 package com.chensoul.bookstore.order.web.job;
 
-import com.chensoul.bookstore.order.service.OrderService;
+import com.chensoul.bookstore.order.application.service.OrderService;
 import java.time.Instant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,12 +8,12 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-class OrderProcessingJob {
-    private static final Logger log = LoggerFactory.getLogger(OrderProcessingJob.class);
+class OrderProcessJob {
+    private static final Logger log = LoggerFactory.getLogger(OrderProcessJob.class);
 
     private final OrderService orderService;
 
-    OrderProcessingJob(OrderService orderService) {
+    OrderProcessJob(OrderService orderService) {
         this.orderService = orderService;
     }
 

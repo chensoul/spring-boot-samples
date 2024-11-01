@@ -1,4 +1,4 @@
-package com.chensoul.bookstore.order.service;
+package com.chensoul.bookstore.order.application.service;
 
 import com.chensoul.bookstore.order.OrderEvent;
 import com.chensoul.bookstore.order.OrderEventType;

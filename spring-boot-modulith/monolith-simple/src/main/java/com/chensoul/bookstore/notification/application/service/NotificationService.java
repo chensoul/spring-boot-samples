@@ -1,4 +1,4 @@
-package com.chensoul.bookstore.notification.service;
+package com.chensoul.bookstore.notification.application.service;
 
 import com.chensoul.bookstore.common.ApplicationProperties;
 import com.chensoul.bookstore.order.OrderEvent;

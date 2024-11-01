@@ -1,6 +1,6 @@
-package com.chensoul.bookstore.product.infrastructure.config;
+package com.chensoul.bookstore.product.adapter.web;
 
-import com.chensoul.bookstore.product.service.ProductNotFoundException;
+import com.chensoul.bookstore.product.application.ProductNotFoundException;
 import java.net.URI;
 import java.time.Instant;
 import org.springframework.http.HttpStatus;

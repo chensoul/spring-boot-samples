@@ -1,10 +1,10 @@
-package com.chensoul.bookstore.order.service;
+package com.chensoul.bookstore.order.application.service;
 
 import com.chensoul.bookstore.order.OrderEvent;
 import com.chensoul.bookstore.order.OrderEventType;
+import com.chensoul.bookstore.order.application.message.OrderEventPublisher;
 import com.chensoul.bookstore.order.domain.OrderEventEntity;
 import com.chensoul.bookstore.order.domain.OrderEventRepository;
-import com.chensoul.bookstore.order.service.event.OrderEventPublisher;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;

@@ -1,9 +1,9 @@
 package com.chensoul.bookstore.order.web.controller;
 
-import com.chensoul.bookstore.order.OrderCreateRequest;
 import com.chensoul.bookstore.order.Order;
-import com.chensoul.bookstore.order.service.OrderNotFoundException;
-import com.chensoul.bookstore.order.service.OrderService;
+import com.chensoul.bookstore.order.OrderCreateRequest;
+import com.chensoul.bookstore.order.application.OrderNotFoundException;
+import com.chensoul.bookstore.order.application.service.OrderService;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.slf4j.Logger;
@@ -44,6 +44,6 @@ class OrderController {
         log.info("Fetching order by id: {}", orderNumber);
         return orderService
                 .findUserOrder("user", orderNumber)
-                .orElseThrow(() -> new OrderNotFoundException(orderNumber));
+                .orElseThrow(() -> OrderNotFoundException.forOrderNumber(orderNumber));
     }
 }

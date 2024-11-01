@@ -1,8 +1,8 @@
-package com.chensoul.bookstore.notification.service.event;
+package com.chensoul.bookstore.notification.application.message;
 
+import com.chensoul.bookstore.notification.application.service.EventLogService;
+import com.chensoul.bookstore.notification.application.service.NotificationService;
 import com.chensoul.bookstore.notification.domain.EventLogEntity;
-import com.chensoul.bookstore.notification.service.EventLogService;
-import com.chensoul.bookstore.notification.service.NotificationService;
 import com.chensoul.bookstore.order.OrderEvent;
 import com.chensoul.bookstore.order.OrderEventType;
 import org.slf4j.Logger;

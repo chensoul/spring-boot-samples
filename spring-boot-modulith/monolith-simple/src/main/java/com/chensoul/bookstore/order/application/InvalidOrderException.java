@@ -1,4 +1,4 @@
-package com.chensoul.bookstore.order.service;
+package com.chensoul.bookstore.order.application;
 
 public class InvalidOrderException extends RuntimeException {
 
