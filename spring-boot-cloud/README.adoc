@@ -1,0 +1,13 @@
+:compat-mode:
+= Lesson 3: Reaching For The Clouds
+
+_How to build and deploy applications that exploit the capabilities of cloud
+platforms such as Cloud Foundry and Heroku._
+
+- link:spring-boot-cloud-heroku[Heroku]
+- link:spring-boot-cloud-cloudfoundry[Cloud Foundry]
+- link:spring-boot-cloud-docker[Docker]
+- link:spring-boot-cloud-service[Consume Cloud Services using Environment Variables]
+- link:spring-boot-cloud-connector[Consume Cloud Services using Cloud Connectors]
+- link:spring-boot-cloud-session[Spring Session]
+- link:spring-boot-cloud-s3[Amazon S3]

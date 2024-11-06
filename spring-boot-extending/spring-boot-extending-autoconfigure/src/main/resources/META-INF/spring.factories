@@ -1,0 +1,15 @@
+# Auto-configuration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.chensoul.autoconfigure.modelmapper.ModelMapperAutoConfiguration
+
+# Listeners
+org.springframework.context.ApplicationListener=\
+com.chensoul.autoconfigure.listener.ExampleApplicationListener
+
+# Initializers
+org.springframework.context.ApplicationContextInitializer=\
+com.chensoul.autoconfigure.initializer.ExampleApplicationContextInitializer
+
+# Failure Analyzers
+org.springframework.boot.diagnostics.FailureAnalyzer=\
+com.chensoul.autoconfigure.failureanalyzer.ModelMapConfigurationFailureAnalyzer

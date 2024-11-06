@@ -1,0 +1,6 @@
+:compat-mode:
+= Lesson 2: Using ``Twelve-Factor'' Style Configuration
+
+_The 12 factor manifesto, external configuration and how these concepts are supported in Spring._
+
+- link:spring-boot-configuration-basic[Basic]

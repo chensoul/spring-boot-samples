@@ -1,0 +1,13 @@
+package com.chensoul;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CloudHerokuApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CloudHerokuApplication.class, args);
+	}
+
+}

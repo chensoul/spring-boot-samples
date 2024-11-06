@@ -1,0 +1,13 @@
+:compat-mode:
+= Lesson 4: Working With Data
+
+_How to design microservices that store and consume data in traditional
+relational databases and newer NoSQL stores._
+
+- link:spring-data-jpa[Relational Database with JPA]
+- link:spring-data-jdbc[Relational Database with JDBC]
+- link:spring-data-flyway[Flyway Migration]
+- link:spring-data-redis[Redis]
+- link:spring-data-mongodb[MongoDB]
+- link:spring-boot-elasticsearch[Elasticsearch]
+- link:spring-data-rest[Spring Data REST]

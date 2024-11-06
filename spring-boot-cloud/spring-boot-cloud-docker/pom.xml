@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chensoul</groupId>
+        <artifactId>spring-boot-cloud</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.chensoul</groupId>
+    <artifactId>spring-boot-cloud-docker</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>spring-boot-cloud-docker</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>21</java.version>
+
+        <docker.image.prefix>${env.USER}</docker.image.prefix>
+        <docker.image.exposed.port>8080</docker.image.exposed.port>
+        <docker.image.dockerfile.dir>${basedir}</docker.image.dockerfile.dir>
+        <!-- podman is also supported -->
+        <container.executable>docker</container.executable>
+        <!-- By default, the OCI image is build for the linux/amd64 platform -->
+        <!-- For Apple Silicon M2 Chip you have to change it to the linux/arm64 -->
+        <container.platform>linux/amd64</container.platform>
+        <!-- The -load option is a shortcut for or -output=type=docker -->
+        <!-- Could be changed by the -push option !-->
+        <container.build.extraarg>--load</container.build.extraarg>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.4</version>
+                <configuration>
+                    <from>
+                        <image>eclipse-temurin:21-jre-jammy</image>
+                    </from>
+                    <to>
+                        <image>spring-jib</image>
+                    </to>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.45.1</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <images>
+                        <image>
+                            <name>spring-fabric8</name>
+                            <build>
+                                <from>eclipse-temurin:21-jre-jammy</from>
+                                <assembly>
+                                    <descriptorRef>artifact</descriptorRef>
+                                </assembly>
+                                <entryPoint>
+                                    <exec>
+                                        <arg>java</arg>
+                                        <arg>-jar</arg>
+                                        <arg>/maven/${project.build.finalName}.${project.packaging}</arg>
+                                    </exec>
+                                </entryPoint>
+                            </build>
+                            <run>
+                                <ports>
+                                    <port>8080:8080</port>
+                                </ports>
+                            </run>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.13</version>
+                <configuration>
+                    <repository>spring-spotify</repository>
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jkube</groupId>
+                <artifactId>kubernetes-maven-plugin</artifactId>
+                <version>1.17.0</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <name>spring-kubernetes</name>
+                            <build>
+                                <from>eclipse-temurin:21-jre-jammy</from>
+                                <assembly>
+                                    <mode>dir</mode>
+                                    <targetDir>/app</targetDir>
+                                    <inline>
+                                        <id>copy-jar</id>
+                                        <baseDirectory>/app</baseDirectory>
+                                        <files>
+                                            <file>
+                                                <source>target/${project.artifactId}-${project.version}.jar</source>
+                                                <outputDirectory>.</outputDirectory>
+                                            </file>
+                                        </files>
+                                    </inline>
+                                </assembly>
+                                <workdir>/app</workdir>
+                                <cmd>java -jar ${project.artifactId}-${project.version}.jar</cmd>
+                                <ports>
+                                    <port>8080</port>
+                                </ports>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <executable>${container.executable}</executable>
+                    <workingDirectory>${docker.image.dockerfile.dir}</workingDirectory>
+                    <arguments>
+                        <argument>build</argument>
+                        <argument>-f</argument>
+                        <argument>Dockerfile</argument>
+                        <argument>--build-arg</argument>
+                        <argument>ARTIFACT_NAME=${project.build.finalName}</argument>
+                        <argument>--build-arg</argument>
+                        <argument>EXPOSED_PORT=${docker.image.exposed.port}</argument>
+                        <argument>--platform</argument>
+                        <argument>${container.platform}</argument>
+                        <argument>${container.build.extraarg}</argument>
+                        <argument>-t</argument>
+                        <argument>${docker.image.prefix}/${project.artifactId}</argument>
+                        <argument>${project.build.directory}</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

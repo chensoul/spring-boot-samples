@@ -1,0 +1,15 @@
+services:
+  spring-docker-compose:
+    image: maven:3.9.9-eclipse-temurin-21-alpine
+    container_name: spring-docker-compose
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    working_dir: /app
+    command: "mvn clean -DskipTests spring-boot:run"
+    healthcheck:
+      test: [ 'CMD-SHELL','curl --fail --silent localhost:8080/actuator/health | grep UP || exit 1' ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
