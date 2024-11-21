@@ -9,15 +9,43 @@
 
     <modules>
         <module>spring-boot-parent</module>
-        <module>spring-boot-bootstrap</module>
-        <module>spring-boot-configuration</module>
-        <module>spring-boot-cloud</module>
-        <module>spring-boot-data</module>
-        <module>spring-boot-rest</module>
-        <module>spring-boot-integration</module>
-        <!--        <module>spring-boot-observability</module>-->
         <module>spring-boot-web</module>
-        <module>spring-boot-extending</module>
-        <module>spring-boot-tool</module>
+        <module>spring-boot-modulith</module>
+        <!--        <module>spring-boot-bootstrap</module>-->
+        <!--        <module>spring-boot-configuration</module>-->
+        <!--        <module>spring-boot-cloud</module>-->
+        <!--        <module>spring-boot-data</module>-->
+        <!--        <module>spring-boot-rest</module>-->
+        <!--        <module>spring-boot-integration</module>-->
+        <!--        <module>spring-boot-observability</module>-->
+        <!--        <module>spring-boot-extending</module>-->
+        <!--        <module>spring-boot-tool</module>-->
     </modules>
+
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>http://repo.spring.io/libs-snapshot-local</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>http://repo.spring.io/libs-milestone-local</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>http://repo.spring.io/libs-release-local</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

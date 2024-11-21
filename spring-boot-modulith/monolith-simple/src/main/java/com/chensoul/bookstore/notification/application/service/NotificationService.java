@@ -1,6 +1,6 @@
 package com.chensoul.bookstore.notification.application.service;
 
-import com.chensoul.bookstore.common.ApplicationProperties;
+import com.chensoul.bookstore.config.ApplicationProperties;
 import com.chensoul.bookstore.order.OrderEvent;
 import jakarta.mail.internet.MimeMessage;
 import org.slf4j.Logger;

@@ -1,10 +1,11 @@
 package com.chensoul.bookstore.product.domain;
 
-import com.chensoul.bookstore.common.PagedResult;
 import java.util.Optional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface ProductRepository {
     Optional<Product> findByCode(String code);
 
-    PagedResult<Product> findAll(int pageNo);
+    Page<Product> findAll(Pageable pageable);
 }

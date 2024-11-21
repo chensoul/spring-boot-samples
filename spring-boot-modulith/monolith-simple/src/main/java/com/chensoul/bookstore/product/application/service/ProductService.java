@@ -1,13 +1,10 @@
 package com.chensoul.bookstore.product.application.service;
 
-import com.chensoul.bookstore.common.model.PagedResult;
 import com.chensoul.bookstore.product.Product;
 import com.chensoul.bookstore.product.domain.ProductRepository;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,21 +17,8 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public PagedResult<Product> getProducts(int pageNo) {
-        Sort sort = Sort.by("name").ascending();
-        pageNo = pageNo <= 1 ? 0:pageNo - 1;
-        Pageable pageable = PageRequest.of(pageNo, 10, sort);
-        Page<Product> productsPage = productRepository.findAll(pageable).map(ProductMapper::toProduct);
-
-        return new PagedResult<>(
-                productsPage.getContent(),
-                productsPage.getTotalElements(),
-                productsPage.getNumber() + 1,
-                productsPage.getTotalPages(),
-                productsPage.isFirst(),
-                productsPage.isLast(),
-                productsPage.hasNext(),
-                productsPage.hasPrevious());
+    public Page<Product> getProducts(Pageable pageable) {
+        return productRepository.findAll(pageable).map(ProductMapper::toProduct);
     }
 
     public Optional<Product> getProductByCode(String code) {

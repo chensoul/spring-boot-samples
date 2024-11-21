@@ -45,3 +45,5 @@
 
 - https://stibel.icu/md/method/arch-principle/arch-principle-arch-develop.html
 - https://github.com/hirannor/springboot-hexagonal-ddd
+- https://github.com/C0de-cake/ecommerce-app/tree/main/apps/ecom-backend
+- https://github.com/sewah2012/hexagonal-architecture-demo-youtube/

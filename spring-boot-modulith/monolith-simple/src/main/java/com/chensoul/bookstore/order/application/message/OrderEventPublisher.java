@@ -1,6 +1,6 @@
 package com.chensoul.bookstore.order.application.message;
 
-import com.chensoul.bookstore.common.ApplicationProperties;
+import com.chensoul.bookstore.config.ApplicationProperties;
 import com.chensoul.bookstore.order.OrderEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;

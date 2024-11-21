@@ -15,3 +15,5 @@
 
 - https://github.com/sivaprasadreddy/sivalabs-youtube-code-samples
 - https://github.com/odrotbohm/spring-restbucks
+- https://github.com/jstobigdata/Spring-Framework-Tutorial/
+- https://github.com/g00glen00b/spring-samples

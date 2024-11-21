@@ -1,11 +1,13 @@
 package com.chensoul.bookstore.product.web.controller;
 
-import com.chensoul.bookstore.common.model.PagedResult;
 import com.chensoul.bookstore.product.Product;
 import com.chensoul.bookstore.product.application.ProductNotFoundException;
 import com.chensoul.bookstore.product.application.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,9 +26,10 @@ class ProductController {
     }
 
     @GetMapping
-    PagedResult<Product> getProducts(@RequestParam(name = "page", defaultValue = "1") int pageNo) {
-        log.info("Fetching products for page: {}", pageNo);
-        return productService.getProducts(pageNo);
+    Page<Product> getProducts(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        log.info("Fetching products for page: {},{}", page, size);
+        return productService.getProducts(pageable);
     }
 
     @GetMapping("/{code}")

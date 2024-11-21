@@ -1,9 +1,0 @@
-:compat-mode:
-= Lesson 9: Developing Web Applications
-
-_Basics of developing web applications to consume your Microservices._
-
-- link:spring-boot-web-resource[Resources]
-- link:spring-boot-web-resource-angular[Resources (Angular)]
-- link:spring-boot-web-thymeleaf[Templating]
-- link:spring-boot-web-transform[Transforms]
