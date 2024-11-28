@@ -19,7 +19,7 @@
     <properties>
         <java.version>21</java.version>
 
-        <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
         <shedlock.version>5.13.0</shedlock.version>
     </properties>
 
