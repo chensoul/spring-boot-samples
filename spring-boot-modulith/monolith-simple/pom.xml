@@ -13,12 +13,7 @@
     <artifactId>monolith-simple</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>monolith</name>
-    <description>Demo project for Spring Boot</description>
-
     <properties>
-        <java.version>21</java.version>
-
         <mapstruct.version>1.6.3</mapstruct.version>
         <shedlock.version>5.13.0</shedlock.version>
     </properties>

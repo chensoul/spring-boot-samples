@@ -11,9 +11,8 @@
 
     <groupId>com.chensoul</groupId>
     <artifactId>spring-boot-grpc-server</artifactId>
+
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-grpc-server</name>
-    <description>Demo project for Spring Boot</description>
 
     <dependencies>
         <dependency>
@@ -25,7 +24,6 @@
         <dependency>
             <groupId>com.chensoul</groupId>
             <artifactId>grpc-interfaces</artifactId>
-            <version>0.0.1</version>
         </dependency>
 
         <dependency>

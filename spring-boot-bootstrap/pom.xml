@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.chensoul</groupId>
-        <artifactId>spring-boot-parent</artifactId>
+        <artifactId>spring-boot-samples</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../spring-boot-parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>spring-boot-bootstrap</artifactId>

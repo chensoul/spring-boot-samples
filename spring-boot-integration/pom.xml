@@ -4,42 +4,20 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.chensoul</groupId>
-        <artifactId>spring-boot-parent</artifactId>
+        <artifactId>spring-boot-samples</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../spring-boot-parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
+
+    <groupId>com.chensoul</groupId>
     <artifactId>spring-boot-integration</artifactId>
     <packaging>pom</packaging>
 
     <modules>
         <module>spring-boot-integration-basic-messaging</module>
-        <module>spring-boot-integration-eai</module>
-        <module>spring-boot-integration-batch</module>
-
         <!--
             new in v2
         -->
         <module>spring-boot-integration-dataflow</module>
-        <module>spring-boot-integration-producer</module>
-        <module>spring-boot-integration-consumer</module>
-        <module>spring-boot-integration-and-batch</module>
     </modules>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2024.0.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dataflow-dependencies</artifactId>
-                <version>2.11.5</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 </project>

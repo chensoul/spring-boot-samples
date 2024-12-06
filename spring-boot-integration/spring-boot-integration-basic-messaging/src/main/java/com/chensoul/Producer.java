@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
 import org.springframework.amqp.rabbit.core.RabbitMessagingTemplate;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

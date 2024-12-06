@@ -2,7 +2,6 @@ package com.chensoul;
 
 import java.lang.management.ManagementFactory;
 import java.util.concurrent.TimeUnit;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;

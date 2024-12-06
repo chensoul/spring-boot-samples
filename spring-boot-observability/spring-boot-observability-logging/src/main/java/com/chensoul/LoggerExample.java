@@ -1,15 +1,13 @@
 package com.chensoul;
 
+import jakarta.annotation.PostConstruct;
 import java.io.IOException;
-
-import javax.annotation.PostConstruct;
-
 import org.springframework.stereotype.Component;
 
 @Component
 public class LoggerExample {
 
-	// @formatter:off
+    // @formatter:off
 	private static final org.apache.commons.logging.Log commonsLoggingLog =
 			org.apache.commons.logging.LogFactory.getLog(LoggerExample.class);
 
@@ -29,15 +27,15 @@ public class LoggerExample {
 			org.apache.juli.logging.LogFactory.getLog(LoggerExample.class);
 	// @formatter:on
 
-	@PostConstruct
-	public void logSomething() {
-		commonsLoggingLog.info("Via CommonsLogging");
-		slf4Jlog.info("Via SLF4J");
-		jbossLog.info("Via JBoss");
-		javaUtilLog.info("Via Java Util");
-		log4jLog.info("Via LOG4J");
-		tomcatJuliLog.info("Via JULI");
-		commonsLoggingLog.error("Something bad", new IOException("Comms Down"));
-	}
+    @PostConstruct
+    public void logSomething() {
+        commonsLoggingLog.info("Via CommonsLogging");
+        slf4Jlog.info("Via SLF4J");
+        jbossLog.info("Via JBoss");
+        javaUtilLog.info("Via Java Util");
+        log4jLog.info("Via LOG4J");
+        tomcatJuliLog.info("Via JULI");
+        commonsLoggingLog.error("Something bad", new IOException("Comms Down"));
+    }
 
 }

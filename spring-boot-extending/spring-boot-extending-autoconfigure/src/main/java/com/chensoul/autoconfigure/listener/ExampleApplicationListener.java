@@ -17,7 +17,6 @@
 package com.chensoul.autoconfigure.listener;
 
 import java.util.Collections;
-
 import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.env.MapPropertySource;

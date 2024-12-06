@@ -2,12 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.chensoul</groupId>
-		<artifactId>spring-boot-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../spring-boot-parent/pom.xml</relativePath>
-	</parent>
+	    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.0</version>
+        <relativePath/>
+    </parent>
+
+
+	<groupId>com.chensoul</groupId>
 	<artifactId>spring-boot-cloud</artifactId>
 	<packaging>pom</packaging>
 
@@ -15,7 +18,7 @@
 		<module>spring-boot-cloud-heroku</module>
 		<module>spring-boot-cloud-cloudfoundry</module>
 		<module>spring-boot-cloud-docker</module>
-		<module>spring-boot-cloud-docker-compose</module>
+		<module>spring-boot-docker-compose</module>
 		<module>spring-boot-cloud-service</module>
 		<module>spring-boot-cloud-connector</module>
 		<module>spring-boot-cloud-session</module>

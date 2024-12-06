@@ -18,7 +18,6 @@ package com.chensoul.autoconfigure.failureanalyzer;
 
 import org.modelmapper.ConfigurationException;
 import org.modelmapper.spi.ErrorMessage;
-
 import org.springframework.boot.diagnostics.AbstractFailureAnalyzer;
 import org.springframework.boot.diagnostics.FailureAnalysis;
 

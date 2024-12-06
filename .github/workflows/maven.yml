@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ '21' ]
+        java: [ '17' ]
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK ${{matrix.java}}
@@ -25,5 +25,5 @@ jobs:
           java-version: ${{matrix.java}}
           cache: 'maven'
 
-#      - name: Test with Maven
-#        run: ./mvnw clean test -ntp -B
+      - name: Build with Maven
+        run: ./mvnw -ntp -B clean package -DskipTests
