@@ -1,0 +1,13 @@
+server.ssl:
+  bundle: server
+  client-auth: NEED
+
+spring.ssl:
+  bundle:
+    pem:
+      server:
+        keystore:
+          certificate: classpath:tls/server/tls.crt
+          private-key: classpath:tls/server/tls.key
+        truststore:
+          certificate: classpath:tls/ca/ca.crt

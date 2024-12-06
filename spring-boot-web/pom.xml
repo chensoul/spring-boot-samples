@@ -13,5 +13,8 @@
 
     <modules>
         <module>spring-boot-web-thymeleaf</module>
+        <module>spring-boot-server-tls</module>
+        <module>spring-boot-server-ssl</module>
+        <module>spring-boot-spring-tls</module>
     </modules>
 </project>
