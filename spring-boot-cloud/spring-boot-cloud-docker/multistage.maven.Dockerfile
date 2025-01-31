@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package
 
-FROM eclipse-temurin:21.0.5_11-jre-alpine
+FROM eclipse-temurin:21.0.6_7-jre-alpine
 WORKDIR /app
 COPY --from=build app/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
