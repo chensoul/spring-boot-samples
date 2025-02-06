@@ -33,7 +33,7 @@ RUN cp -r build/target/extracted/snapshot-dependencies/. ./
 RUN cp -r build/target/extracted/application/. ./
 CMD [ "java", "-Dspring-boot.run.jvmArguments='-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000'", "org.springframework.boot.loader.launch.JarLauncher" ]
 
-FROM eclipse-temurin:21.0.5_11-jre-alpine AS final
+FROM eclipse-temurin:21.0.6_7-jre-alpine AS final
 RUN adduser --disabled-password --gecos "" appuser
 USER appuser
 WORKDIR /app
