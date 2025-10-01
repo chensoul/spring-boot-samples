@@ -3,7 +3,7 @@
 # https://docs.docker.com/reference/dockerfile/
 # https://docs.docker.com/build/guide/multi-stage/
 
-FROM maven:3.9.9-eclipse-temurin-21-alpine AS base
+FROM maven:3.9.11-eclipse-temurin-21-alpine AS base
 WORKDIR /build
 COPY src src
 RUN sed -i -E '159a <mirror>\n<id>aliyun</id>\n<name>Aliyun Mirror</name>\n<url>http://maven.aliyun.com/nexus/content/groups/public/</url>\n<mirrorOf>central</mirrorOf>\n</mirror>' /usr/share/maven/conf/settings.xml
