@@ -25,4 +25,4 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
-task wrapper(type: Wrapper) { gradleVersion = '8.13' }
+task wrapper(type: Wrapper) { gradleVersion = '8.14.3' }
